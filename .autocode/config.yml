@@ -1,0 +1,49 @@
+name: Autocode Atom
+description: official Atom plugin of [Autocode](https://crystal.sh/autocode)
+author:
+  name: Chris Tate
+  email: chris@crystal.sh
+  url: https://crystal.sh
+copyright: 2015 Crystal
+imports:
+  crystal/atom: ~0.1.0
+  crystal/git: ~0.2.0
+  crystal/license: ~0.3.1
+  crystal/npm: ~0.3.0
+  crystal/readme: ~0.5.1
+outputs:
+  - generator: atom.KeymapGenerator
+    filename: keymaps/autocode.json
+    spec:
+      atom-workspace:
+        ctrl-cmd-b: autocode:build
+  - generator: atom.MenuGenerator
+    filename: menus/autocode.json
+    spec:
+      menu:
+        - label: Packages
+          submenu:
+            - label: Autocode
+              submenu:
+                - label: Build project...
+                  command: autocode:build
+  - generator: git.GitignoreGenerator
+    spec:
+      items:
+        - node_modules/
+  - generator: npm.PackageGenerator
+    spec:
+      name: autocode
+      version: 0.1.0
+      description: $description
+      repository:
+        type: git
+        url: https://github.com/crystal/autocode-atom
+      main: ./lib/autocode
+      dependencies:
+        autocode-js: latest
+        loophole: ~1.0.0
+  - generator: readme.ReadmeGenerator
+    spec:
+      name: $name
+      description: $description
