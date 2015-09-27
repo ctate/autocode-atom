@@ -9,6 +9,10 @@
 						{
 							"label": "Build project...",
 							"command": "autocode:build"
+						},
+						{
+							"label": "Build project (Force)...",
+							"command": "autocode:buildForce"
 						}
 					]
 				}

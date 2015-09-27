@@ -3,8 +3,6 @@ autocode = require 'autocode-js'
 {allowUnsafeNewFunction} = require 'loophole'
 
 module.exports = Autocode =
-  autocodeView: null
-  modalPanel: null
   subscriptions: null
 
   activate: (state) ->
@@ -13,6 +11,7 @@ module.exports = Autocode =
 
     # Register command that toggles this view
     @subscriptions.add atom.commands.add 'atom-workspace', 'autocode:build': => @build()
+    @subscriptions.add atom.commands.add 'atom-workspace', 'autocode:buildForce': => @buildForce()
     @subscriptions.add atom.commands.add 'atom-workspace', 'autocode:update': => @update()
 
   deactivate: ->
@@ -23,6 +22,12 @@ module.exports = Autocode =
       for path in atom.project.getPaths()
         project = new autocode path
         project.build()
+  
+  buildForce: ->
+    allowUnsafeNewFunction ->
+      for path in atom.project.getPaths()
+        project = new autocode path
+        project.build { force: true }
   
   update: ->
     allowUnsafeNewFunction ->

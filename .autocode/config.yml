@@ -17,6 +17,7 @@ outputs:
     spec:
       atom-workspace:
         ctrl-cmd-b: autocode:build
+        ctrl-cmd-shift-b: autocode:buildForce
   - generator: atom.MenuGenerator
     filename: menus/autocode.json
     spec:
@@ -27,6 +28,8 @@ outputs:
               submenu:
                 - label: Build project...
                   command: autocode:build
+                - label: Build project (Force)...
+                  command: autocode:buildForce
   - generator: git.GitignoreGenerator
     spec:
       items:
@@ -37,7 +40,7 @@ outputs:
   - generator: npm.PackageGenerator
     spec:
       name: autocode
-      version: 0.1.1
+      version: 0.1.2
       description: $description
       repository:
         type: git

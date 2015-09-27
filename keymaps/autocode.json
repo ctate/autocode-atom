@@ -1,5 +1,6 @@
 {
 	"atom-workspace": {
-		"ctrl-cmd-b": "autocode:build"
+		"ctrl-cmd-b": "autocode:build",
+		"ctrl-cmd-shift-b": "autocode:buildForce"
 	}
 }
