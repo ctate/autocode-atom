@@ -20,10 +20,12 @@ module.exports = Autocode =
 
   build: ->
     allowUnsafeNewFunction ->
-      project = new autocode '/Users/ctate/.autocode/dev/autocode-atom'
-      project.build()
+      for path in atom.project.getPaths()
+        project = new autocode path
+        project.build()
   
   update: ->
     allowUnsafeNewFunction ->
-      project = new autocode '/Users/ctate/.autocode/dev/autocode-atom'
-      project.update()
+      for path in atom.project.getPaths()
+        project = new autocode path
+        project.update()

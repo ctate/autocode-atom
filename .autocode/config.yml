@@ -37,7 +37,7 @@ outputs:
   - generator: npm.PackageGenerator
     spec:
       name: autocode
-      version: 0.1.0
+      version: 0.1.1
       description: $description
       repository:
         type: git
