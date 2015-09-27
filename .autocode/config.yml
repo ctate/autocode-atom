@@ -1,5 +1,5 @@
 name: Autocode Atom
-description: official Atom plugin of [Autocode](https://crystal.sh/autocode)
+description: official Atom plugin of [Autocode](https://crystal.sh)
 author:
   name: Chris Tate
   email: chris@crystal.sh
@@ -30,6 +30,8 @@ outputs:
                   command: autocode:build
                 - label: Build project (Force)...
                   command: autocode:buildForce
+                - label: Initialize project...
+                  command: autocode:initialize
   - generator: git.GitignoreGenerator
     spec:
       items:
@@ -40,7 +42,12 @@ outputs:
   - generator: npm.PackageGenerator
     spec:
       name: autocode
-      version: 0.1.2
+      version: 0.1.3
+      keywords:
+        - autocode
+        - codegen
+        - code generation
+        - crystal
       description: $description
       repository:
         type: git
@@ -53,3 +60,28 @@ outputs:
     spec:
       name: $name
       description: $description
+      sections:
+        - title: Install
+          content: |
+            Use `apm` to install:
+            
+            ```sh
+            apm install autocode
+            ```
+        - title: Commands
+          content: |
+            ## Autocode: Build
+            
+            Build your Autocode project.
+            
+            ## Autocode: BuildForce
+            
+            Force Build your Autocode project.
+            
+            ## Autocode: Initialize
+            
+            Initialize your Autocode project.
+            
+            ## Autocode: Update
+            
+            Update your Autocode project.

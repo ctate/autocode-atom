@@ -13,6 +13,10 @@
 						{
 							"label": "Build project (Force)...",
 							"command": "autocode:buildForce"
+						},
+						{
+							"label": "Initialize project...",
+							"command": "autocode:initialize"
 						}
 					]
 				}
