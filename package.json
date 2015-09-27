@@ -1,20 +1,20 @@
 {
-	"dependencies": {
-		"autocode-js": "latest",
-		"loophole": "~1.0.0"
-	},
-	"description": "official Atom plugin of [Autocode](https://crystal.sh)",
-	"keywords": [
-		"autocode",
-		"codegen",
-		"code generation",
-		"crystal"
-	],
-	"main": "./lib/autocode",
-	"name": "autocode",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/crystal/autocode-atom"
-	},
-	"version": "0.1.3"
+  "dependencies": {
+    "autocode-js": "latest",
+    "loophole": "~1.0.0"
+  },
+  "description": "official Atom plugin of [Autocode](https://crystal.sh)",
+  "keywords": [
+    "autocode",
+    "codegen",
+    "code generation",
+    "crystal"
+  ],
+  "main": "./lib/autocode",
+  "name": "autocode",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/crystal/autocode-atom"
+  },
+  "version": "0.1.4"
 }
