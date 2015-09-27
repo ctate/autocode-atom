@@ -31,6 +31,9 @@ outputs:
     spec:
       items:
         - node_modules/
+  - generator: license.MITGenerator
+    spec:
+      copyright: $copyright
   - generator: npm.PackageGenerator
     spec:
       name: autocode
